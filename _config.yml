@@ -1,0 +1,11 @@
+# Site settings
+title: Poe's Magazines
+email: dostrenko@lsu.edu
+description: This project reconstructs Poe’s career as a magazinist and opens a window on antebellum print culture by building a digital collection of every issue of all four principal magazines that Poe helped to edit. We present page images as well as searchable, corrected OCR scans from theSouthern LiteraryMessenger (1835-1837),Burton’s Gentleman’s Magazine (1839-1840),Graham’s Magazine (1841-42), and theBroadway Journal (1845-46). Author profiles (using EAC-CPF standards) help to elucidate the network of contributors upon which each journal depended. In addition, we provide issue previews that identify significant contents and that offer commentary on the “cultural threads”—distinctive features of antebellum American culture—that can be discerned in the issue. These threads are a starting point, a testing ground for ways to produce more computationally-derived key features of each issue. That more expansive searchability will emerge as we place OCR-corrected digital files and embedded metadata behind the page images now usable.
+baseurl: "/apc-jekyll" # the subpath of your site, e.g. /blog/
+url: "http://literati.github.io" # the base hostname & protocol for your site
+twitter_username: fredeerock
+github_username:  literati
+
+# Build settings
+markdown: kramdown

@@ -8,9 +8,13 @@
     <div class="row">
       {% include sidebar.html %}
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        {% case page.tag contains %}{% when 'grahams' %}<img src="{{ site.baseurl }}/img/grahams.png" class="img-responsive" />{% when 'broadway' %}<img src="{{ site.baseurl }}/img/broadway.png" class="img-responsive" />{% when 'slm' %}<img src="{{ site.baseurl }}/img/slm.png"
-        class="img-responsive" />{% when 'burtons' %}<img src="{{ site.baseurl }}/img/burtons.png" class="img-responsive" />{% else %}{% endcase %} 
-        {{ content }}
+        <div class="panel panel-default">
+          <div class="panel-body">
+            {% case page.tag contains %}{% when 'grahams' %}<img src="{{ site.baseurl }}/img/grahams.png" class="img-responsive" />{% when 'broadway' %}<img src="{{ site.baseurl }}/img/broadway.png" class="img-responsive" />{% when 'slm' %}<img src="{{ site.baseurl }}/img/slm.png"
+            class="img-responsive" />{% when 'burtons' %}<img src="{{ site.baseurl }}/img/burtons.png" class="img-responsive" />{% else %}{% endcase %} 
+            {{ content }}
+          </div>
+        </div>
       </div>
     </div>
   </div>

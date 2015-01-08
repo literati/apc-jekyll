@@ -69,6 +69,13 @@ body {
   background-color: #428bca;
 }
 
+@media (max-width: 767px) /* @grid-float-breakpoint -1 */ {
+  .navbar-fixed-top {
+    position: relative;
+    top: auto;
+  }
+}
+
 
 /*
  * Main content
@@ -77,12 +84,14 @@ body {
 .main {
   padding: 20px;
 }
+
 @media (min-width: 768px) {
   .main {
     padding-right: 40px;
     padding-left: 40px;
   }
 }
+
 .main .page-header {
   margin-top: 0;
 }

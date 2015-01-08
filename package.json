@@ -1,0 +1,31 @@
+{
+  "name": "apc-jekyll",
+  "version": "0.0.1",
+  "description": "A development tool for the website Poe's Magazines.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/literati/apc-jekyll"
+  },
+  "keywords": [
+    "poe",
+    "jekyll",
+    "bootstrap",
+    "lsu"
+  ],
+  "author": "Derick Ostrenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/literati/apc-jekyll/issues"
+  },
+  "homepage": "https://github.com/literati/apc-jekyll",
+	"dependencies": {
+  	"grunt": "^0.4.5",
+  	"grunt-shell": "^1.1.1",
+  	"docxtohtml": "*",
+  	"bower": "^1.3.12"
+	}
+}

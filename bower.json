@@ -1,0 +1,12 @@
+{
+	"name": "apc-bootstrap",
+	"version": "0.0.2",
+	"authors": [
+		"Derick Ostrenko <dostrenko@gmail.com>"
+	],
+	"description": "An awesome web application",
+	"license": "MIT",
+	"dependencies": {
+		"bootstrap": "^3.3.1"
+	}
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+
+<body>
+  {% include navbar.html %}
+  <div class="container-fluid">
+    <div class="row">
+      {% include sidebar.html %}
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div role="tabpanel">
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  {% case page.tag contains %}{% when 'grahams' %}<img src="{{ site.baseurl }}/img/grahams.png" />{% when 'broadway' %}<img src="{{ site.baseurl }}/img/broadway.png" />{% when 'slm' %}<img src="{{ site.baseurl }}/img/slm.png" />{% when 'burtons' %}<img src="{{ site.baseurl }}/img/burtons.png" />{% else %}{% endcase %}
+                  {{ content }}
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="pages">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item pageturner" src="http://literati.cct.lsu.edu/repository/islandora/object/islandora%3A159#page/1/mode/2up"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include footer.html %}
+</body>
+
+</html>

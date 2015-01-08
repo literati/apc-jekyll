@@ -107,6 +107,13 @@ body {
   font-family: 'Alegreya SC', serif;
   font-size: 40px;
 }
+
+@media (min-width: 768px) {
+  .navbar-brand {
+  font-family: 'Alegreya SC', serif;
+  font-size: 20px;
+}
+}
 /*
  * Placeholder dashboard ideas
  */

@@ -1,5 +1,7 @@
+
+
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -33,6 +35,10 @@
       </div>
     </div>
   </div>
+  
+  
+  
+  
 </div>
 
 <!-- Bootstrap core JavaScript
@@ -43,9 +49,10 @@
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="{{ "/js/ie10-viewport-bug-workaround.js" | prepend: site.baseurl }}"></script>
 
+<!-- Smooth Scroll to anchor -->
 <script type="text/javascript">
 $(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
+  $('.nav-sidebar a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -59,3 +66,77 @@ $(function() {
   });
 });
 </script>
+
+<script type="text/javascript">
+  // $(".nav ul li a[href^='#']").on('click', function(e) {
+  
+  //   // prevent default anchor click behavior
+  //   e.preventDefault();
+  
+  //   // store hash
+  //   var hash = this.hash;
+  
+  //   // animate
+  //   $('html, body').animate({
+  //       scrollTop: $(this.hash).offset().top
+  //     }, 300, function(){
+  
+  //       // when done, add hash to url
+  //       // (default click behaviour)
+  //       window.location.hash = hash;
+  //     });
+  
+  // });
+</script>
+
+<!-- stylize google data -->
+<script type="text/javascript">
+  $('#google-download ul:first').replaceWith(function () {
+      return $("<div />").append($(this).contents());
+  });
+  
+  $('div>li').replaceWith(function () {
+      return $("<div class=\"panel panel-default\" />").append($(this).contents());
+  });
+  
+  $('.panel>h1').replaceWith(function () {
+    var h1id = $( ".panel>h1" ).attr( "id" );
+    return $("<div class=\"panel-heading\" />").append($(this).contents()).wrapInner("<h1 class=\"panel-title\" id=\""+h1id+"\"> </h1>");
+  });
+  
+  //.before("<span class=\"anchor\" id=\""+h1id+"\"></span>")
+  
+  // $(".panel-heading").wrapInner( "<h1 class='panel-title'></h1>");
+  
+  $('.panel>ul').replaceWith(function () {
+      return $("<div class=\"panel-body\" />").append($(this).contents());
+  });
+  
+
+  
+</script>
+
+
+<script type="text/javascript" >
+
+// Check the main container is ready
+$('#google-download').ready(function(){
+    // Get each div
+    $('.panel').each(function(){
+        // Get the content
+        var str = $(this).html();
+        // Set the regex string
+        // var regex = /(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?)/ig
+        var regex = /\(p\. (\d+)\)/g
+        // Replace plain text links by hyperlinks
+        var replaced_text = str.replace(regex, "<a href='{% case page.tag contains %}{% when 'grahams' %}http://literati.cct.lsu.edu/repository/islandora/object/islandora%3A279#page/$1/mode/2up{% when 'broadway' %}http://literati.cct.lsu.edu/repository/islandora/object/islandora%3A142#page/$1/mode/2up{% when 'slm' %}http://literati.cct.lsu.edu/repository/islandora/object/islandora%3A42#page/$1/mode/2up{% when 'burtons' %}http://literati.cct.lsu.edu/repository/islandora/object/islandora%3A159#page/$1/mode/2up{% else %}{% endcase %}'>(p. $1)</a>")
+        // Echo link
+        $(this).html(replaced_text);
+    });
+});
+
+  
+</script>
+
+
+

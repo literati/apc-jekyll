@@ -2,15 +2,26 @@
 <html lang="en">
 {% include head.html %}
 
-<body data-spy="scroll" data-target="#myscrollspy" data-offset="100">
+<body data-spy="scroll" data-target="#myscrollspy" data-offset="100" >
   {% include navbar.html %}
   <div class="container-fluid">
     <div class="row">
       {% include sidebar.html %}
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        {% case page.tag contains %}{% when 'grahams' %}<img src="{{ site.baseurl }}/img/grahams.png" class="img-responsive" />{% when 'broadway' %}<img src="{{ site.baseurl }}/img/broadway.png" class="img-responsive" />{% when 'slm' %}<img src="{{ site.baseurl }}/img/slm.png"
-        class="img-responsive" />{% when 'burtons' %}<img src="{{ site.baseurl }}/img/burtons.png" class="img-responsive" />{% else %}{% endcase %} 
-        {{ content }}
+        <div class="panel panel-default">
+          <div class="panel-heading"><h1 id="issue" class="panel-title">Issue</h1></div>
+          <div class="panel-body">
+            {% case page.tag contains %}{% when 'grahams' %}<img src="{{ site.baseurl }}/img/grahams.png" class="img-responsive" />{% when 'broadway' %}<img src="{{ site.baseurl }}/img/broadway.png" class="img-responsive" />{% when 'slm' %}<img src="{{ site.baseurl }}/img/slm.png"
+            class="img-responsive" />{% when 'burtons' %}<img src="{{ site.baseurl }}/img/burtons.png" class="img-responsive" />{% else %}{% endcase %} 
+          </div>
+        </div>
+        <div id="google-download">{{ content }}</div>
+         <div class="panel panel-default">
+          <div class="panel-heading"><h1 id="page" class="panel-title">Pages</h1></div>
+          <div class="panel-body">
+            <iframe src='{% case page.tag contains %}{% when 'grahams' %}http://literati.cct.lsu.edu/repository/islandora/object/islandora%3A279#page/$1/mode/2up{% when 'broadway' %}http://literati.cct.lsu.edu/repository/islandora/object/islandora%3A142#page/$1/mode/2up{% when 'slm' %}http://literati.cct.lsu.edu/repository/islandora/object/islandora%3A42#page/$1/mode/2up{% when 'burtons' %}http://literati.cct.lsu.edu/repository/islandora/object/islandora%3A159#page/$1/mode/2up{% else %}{% endcase %}'></iframe></iframe> 
+          </div>
+        </div>
       </div>
     </div>
   </div>

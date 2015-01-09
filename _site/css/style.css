@@ -98,10 +98,6 @@ body {
 .embed-responsive.embed-responsive-16by9 {
   padding-bottom: 75%;
 }
-/*.panel-body h1:first-child{
-  margin-top: -10px;
-}
-*/
 
 .navbar-brand {
   font-family: 'Alegreya SC', serif;
@@ -114,28 +110,49 @@ body {
     font-size: 20px;
   }
 }
-/*
- * Placeholder dashboard ideas
- */
-/*.placeholders {
-  margin-bottom: 30px;
-  text-align: center;
-}
-.placeholders h4 {
-  margin-bottom: 0;
-}
-.placeholder {
-  margin-bottom: 20px;
-}
-.placeholder img {
-  display: inline-block;
-  border-radius: 50%;
-}*/
 
-ul > li > h1 {
-  padding-top: 60px;
-  margin-top: -60px;
+/*ul {*/
+/*  list-style-type: none;*/
+/*}*/
+
+/*google-download content*/
+
+.panel .panel-title {
+  /*font: bold 20px Sans-Serif;*/
+  padding-top: 77px;
+  margin-top: -77px;
+  font-size: 20px;
+  color: #444;
+  text-shadow: 
+    1px 0px 1px #ccc, 0px 1px 1px #eee, 
+    2px 1px 1px #ccc, 1px 2px 1px #eee
 }
-ul {
-  list-style-type: none;
+
+
+.panel-body h2:first-child{
+  margin-top: 0px;
+}
+
+.panel h2 {
+    font-size:15px;
+    font-weight: bold;
+}
+
+.panel h3 {
+    font-size:14px;
+    opacity: .75;
+    font-weight: bold;
+}
+
+.nav li a{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+iframe { 
+  width:100%; 
+  padding:0; 
+  border:0; 
+  height:750px; 
 }

@@ -24,7 +24,7 @@
 
 </head>
 
-<body data-spy="scroll" data-target="#myscrollspy" data-offset="100">
+<body data-spy="scroll" data-target="#myscrollspy" data-offset="100" >
   <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -69,7 +69,7 @@
   <ul class="nav nav-pills nav-stacked nav-sidebar">
     <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Graham's Magazine
+        <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Graham's Magazine
         <span class="caret"></span>
       </a>
       <ul class="dropdown-menu" role="menu">
@@ -81,23 +81,27 @@
         </li>
       </ul>
     </li>
-    <li><a href="#publication-details"><span class="glyphicon glyphicon-pencil"></span>Publication Details</a>
+    <li><a href="#publication-details"><span class="glyphicon glyphicon-pencil"></span> Publication Details</a>
     </li>
-    <li><a href="#table-of-contents-sequential"><span class="glyphicon glyphicon-th-list"></span>Table of Contents</a>
+    <li><a href="#table-of-contents-sequential"><span class="glyphicon glyphicon-th-list"></span> Table of Contents</a>
     </li>
-    <li><a href="#cultural-threads"><span class="glyphicon glyphicon-plus"></span>Threads</a>
+    <li><a href="#cultural-threads"><span class="glyphicon glyphicon-plus"></span> Threads</a>
     </li>
-    <li><a href="#commentary"><span class="glyphicon glyphicon-user"></span>Commentary</a>
+    <li><a href="#commentary"><span class="glyphicon glyphicon-user"></span> Commentary</a>
     </li>
-    <li><a href="#page"><span class="glyphicon glyphicon-file"></span>Pages</a>
+    <li><a href="#page"><span class="glyphicon glyphicon-file"></span> Pages</a>
     </li>
   </ul>
 </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <div class="panel panel-default">
+          <div class="panel-heading"><h1 class="panel-title">Issue</h1></div>
           <div class="panel-body">
             <img src="/apc-jekyll/img/grahams.png" class="img-responsive" /> 
-            <ul>
+          </div>
+        </div>
+        
+        <div id="google-download"><ul>
     <li>
         <h1 id="publication-details">Publication Details</h1>
         <ul>
@@ -299,13 +303,13 @@
                 <br />This issue of<em>Graham&#8217;s</em> was Poe&#8217;s last as editor. He resigned from the staff around April 1st, to be replaced by Rufus W. Griswold, his later nemesis.</li>
         </ul>
     </li>
-</ul>
-          </div>
-        </div>
+</ul></div>
       </div>
     </div>
   </div>
-  <!-- Modal -->
+  
+
+<!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -340,6 +344,10 @@
       </div>
     </div>
   </div>
+  
+  
+  
+  
 </div>
 
 <!-- Bootstrap core JavaScript
@@ -350,6 +358,7 @@
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="/apc-jekyll/js/ie10-viewport-bug-workaround.js"></script>
 
+<!-- Smooth Scroll to anchor -->
 <script type="text/javascript">
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
@@ -366,6 +375,78 @@ $(function() {
   });
 });
 </script>
+
+<!-- stylize google data -->
+<script type="text/javascript">
+  $('#google-download ul:first').replaceWith(function () {
+      return $("<div />").append($(this).contents());
+  });
+  
+  $('div>li').replaceWith(function () {
+      return $("<div class=\"panel panel-default\" />").append($(this).contents());
+  });
+  
+  $('.panel>h1').replaceWith(function () {
+      return $("<div class=\"panel-heading\" />").append($(this).contents());
+  });
+  
+  $(".panel-heading").wrapInner( "<h1 class='panel-title'></h1>");
+  
+  $('.panel>ul').replaceWith(function () {
+      return $("<div class=\"panel-body\" />").append($(this).contents());
+  });
+  
+  // $(document).ready(function() {
+  //   $("body").html(String($('body').html()).replace(/\(p\. \d+\)/g, 'Pi'));
+  // });
+  
+</script>
+
+
+<script type="text/javascript" >
+//   var regex = /\(p\. (\d+)\)/g,
+//       replacement = '<a id="tohtml" href="http://literati.cct.lsu.edu/repository/islandora/object/islandora%3A42#page/$1/mode/2up">$1</a>';
+  
+//   function replaceText(i,el) {
+//       if (el.nodeType === 3) {
+//           if (regex.test(el.data)) {
+//               el.data = el.data.replace(regex, replacement);
+//           }
+//       } else {
+//           $(el).contents().each( replaceText );
+//       }
+//   }
+  
+//   $('body').each( replaceText );
+  
+// $
+
+// function tohtml() {
+//     var d = $("#tohtml");
+//     d.html(d.text());
+// }
+
+// Check the main container is ready
+$('#google-download').ready(function(){
+    // Get each div
+    $('.panel').each(function(){
+        // Get the content
+        var str = $(this).html();
+        // Set the regex string
+        // var regex = /(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?)/ig
+        var regex = /\(p\. (\d+)\)/g
+        // Replace plain text links by hyperlinks
+        var replaced_text = str.replace(regex, "<a href='http://literati.cct.lsu.edu/repository/islandora/object/islandora%3A42#page/$1/mode/2up' target='_blank'>$1</a>");
+        // Echo link
+        $(this).html(replaced_text);
+    });
+});
+  
+</script>
+
+
+
+
 
 </body>
 

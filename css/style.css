@@ -153,3 +153,10 @@ ul > li > h1 {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+iframe { 
+  width:100%; 
+  padding:0; 
+  border:0; 
+  height:750px; 
+}

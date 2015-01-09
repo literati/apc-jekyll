@@ -77,31 +77,14 @@ $(function() {
       return $("<div class=\"panel panel-default\" />").append($(this).contents());
   });
   
-  // var title = $( "em" ).attr( "title" );
-  // $( "div" ).text( title );
-  
-  
-  
-  // var $a = $('a#thisid');
-  // var ahref = $a.attr('href');
-  // var aclass = $a.attr('class');
-  // var aid = $a.attr('id');
-  // var atext = $a.text();
-  // $a.replaceWith('<p href="'+ ahref +'" class="'+ aclass +'" id="'+ aid+'">'+ atext +'</p>');
-  
   $('.panel>h1').replaceWith(function () {
-      var h1id = $( ".panel>h1" ).attr( "id" );
-      return $("<div id=\""+h1id+"\" class=\"panel-heading\" />").append($(this).contents());
+    var h1id = $( ".panel>h1" ).attr( "id" );
+    return $("<div class=\"panel-heading\" />").append($(this).contents()).wrapInner("<h1 class=\"panel-title\" id=\""+h1id+"\"> </h1>");
   });
   
+  //.before("<span class=\"anchor\" id=\""+h1id+"\"></span>")
   
-
-
-
-
-  
-  
-  $(".panel-heading").wrapInner( "<h1 class='panel-title'></h1>");
+  // $(".panel-heading").wrapInner( "<h1 class='panel-title'></h1>");
   
   $('.panel>ul').replaceWith(function () {
       return $("<div class=\"panel-body\" />").append($(this).contents());
